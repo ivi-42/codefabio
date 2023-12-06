@@ -14,13 +14,19 @@ def legal_m(board, position1, position2):
 
     # check horizontally, only if they are 3 columns to the left
         horizontal_check = False
-        if col <= 2 and all(col + i < len(board[row]) for i in range(1, 3)) and gem == board[row][col+1] and gem == board[row][col+2]:
-            horizontal_check = True
+        if col <= 2:  #check 3
+            horizontal_check = all(col + i < len(board[row]) for i in range(1, 3)) and gem == board[row][col+1] == board[row][col+2]
+        if not horizontal_check and col <= 1:  # check 4
+            horizontal_check = all(col + i < len(board[row]) for i in range(1, 4)) and gem == board[row][col+1] == board[row][col+2] == board[row][col+3]
+
 
     # check vertically only if they are 3 lines below
         vertical_check = False
-        if row <= 2 and all(row + i < len(board) for i in range(1, 3)) and gem == board[row+1][col] and gem == board[row+2][col]:
-            vertical_check = True
+        if row <= 2:  #again3
+            vertical_check = all(row + i < len(board) for i in range(1, 3)) and gem == board[row+1][col] == board[row+2][col]
+        if not vertical_check and row <= 1:  
+            vertical_check = all(row + i < len(board) for i in range(1, 4)) and gem == board[row+1][col] == board[row+2][col] == board[row+3][col]
+
 
         return horizontal_check or vertical_check
 
