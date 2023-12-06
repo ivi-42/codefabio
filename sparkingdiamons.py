@@ -1,8 +1,7 @@
 
 #main function
 def legal_m(board, position1, position2):
-    #here i will create a function that swaps the gems at position1 and position2 and reverse after seeing 
-    #if the move is legal
+    #swap gem to two given position, here i simulate the board after the swap
     def swap(c1, c2):
         board[c1[0]][c1[1]], board[c2[0]][c2[1]] = board[c2[0]][c2[1]], board[c1[0]][c1[1]]
     #here i will create a function that checks if there is a line of 3 or more gems of the same type starting
