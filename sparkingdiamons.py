@@ -1,6 +1,5 @@
 
-#i will start by creating a function that contains board (current state) and the position
-#of the gem that i want to swap. they are given as tuples
+#main function
 def legal_m(board, position1, position2):
     #here i will create a function that swaps the gems at position1 and position2 and reverse after seeing 
     #if the move is legal
